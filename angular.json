@@ -3,5 +3,37 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "performance-widget": {
+      "projectType": "library",
+      "root": "projects/performance-widget",
+      "sourceRoot": "projects/performance-widget/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/performance-widget/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/performance-widget/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/performance-widget/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/performance-widget/src/test.ts",
+            "tsConfig": "projects/performance-widget/tsconfig.spec.json",
+            "karmaConfig": "projects/performance-widget/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "performance-widget"
 }

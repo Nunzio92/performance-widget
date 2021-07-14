@@ -14,6 +14,12 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "performance-widget": [
+        "dist/performance-widget/performance-widget",
+        "dist/performance-widget"
+      ]
+    },
     "target": "es2017",
     "module": "es2020",
     "lib": [
